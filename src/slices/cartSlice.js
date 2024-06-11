@@ -28,6 +28,7 @@ const cartSlice = createSlice({
       }
       // If the course is not in the cart, add it to the cart
       state.cart.push(course)
+      toast.success("course added in cart")
       // Update the total quantity and price
       state.totalItems++
       state.total += course.price

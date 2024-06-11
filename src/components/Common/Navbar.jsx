@@ -4,6 +4,7 @@ import { BsChevronDown } from "react-icons/bs"
 import { useSelector } from "react-redux"
 import { Link, matchPath, useLocation } from "react-router-dom"
 
+
 import logo from "../../assets/Logo/Logo-Full-Light.png"
 import { NavbarLinks } from "../../data/navbar-links"
 import { apiConnector } from "../../services/apiConnector"
@@ -11,24 +12,7 @@ import { categories } from "../../services/apis"
 import { ACCOUNT_TYPE } from "../../utils/constants"
 import ProfileDropdown from "../core/Auth/ProfileDropdown"
 
-// const subLinks = [
-//   {
-//     title: "Python",
-//     link: "/catalog/python",
-//   },
-//   {
-//     title: "javascript",
-//     link: "/catalog/javascript",
-//   },
-//   {
-//     title: "web-development",
-//     link: "/catalog/web-development",
-//   },
-//   {
-//     title: "Android Development",
-//     link: "/catalog/Android Development",
-//   },
-// ];
+
 
 function Navbar() {
   const { token } = useSelector((state) => state.auth)
@@ -53,13 +37,6 @@ function Navbar() {
       setLoading(false)
     })()
   }, [])
-
-    //  subLinks.map((link,i)=>{
-    //   console.log("links",link);
-    //  })
-    
-
-  // console.log("sub links", subLinks)
 
   const matchRoute = (route) => {
     return matchPath({ path: route }, location.pathname)
@@ -176,8 +153,9 @@ function Navbar() {
           )}
           {token !== null && <ProfileDropdown />}
         </div>
-        <button className="mr-4 md:hidden">
+        <button className="mr-4 md:hidden" >
           <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
+          {/* <Sidebar></Sidebar> */}
         </button>
       </div>
     </div>
