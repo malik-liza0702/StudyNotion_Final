@@ -12,7 +12,6 @@ const cors = require("cors");
 const { cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
-// const stripe=require("stripe")("sk_test_51Ole64SGGgnf8HfeKJ7U2zK51kPtStoV3gRZTIKQIWux1QUujuTe633WB4IUFOp6QuYoX7B8sPsp6kfNGbQ5yBL300CPWrraqI")
 
 // Setting up port number
 const PORT = process.env.PORT || 8000;
@@ -56,35 +55,6 @@ app.get("/", (req, res) => {
 		message: "Your server is up and running ...",
 	});
 });
-
-// checkout api
-// app.post("/api/v1/create-checkout-session",async(req,res)=>{
-// 	const {products}=req.body;
-// 	console.log(products)
-
-// 	const lineItems=products.map((product)=>({
-// 		price_data:{
-// 			currency:"usd",
-// 			product_data:{
-// 				name:product.courseName
-// 			},
-// 			unit_amount:product.price*100,
-// 		},
-// 		quantity:1
-// 	}))
-
-// 	const session=await stripe.checkout.sessions.create({
-// 		mode:"payment",
-// 		payment_method_types:["card"],
-// 		line_items:lineItems,
-// 		success_url:"http://localhost:3000/dashboard/enrolled-courses",
-// 		cancel_url:"http://localhost:3000/"
-// 	})
-
-// 	res.json({id:session.id})
-// })
-
-
 
 // Listening to the server
 app.listen(PORT, () => {
