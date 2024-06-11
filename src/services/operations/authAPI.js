@@ -35,7 +35,7 @@ export function sendOtp(email, navigate) {
       navigate("/verify-email")
     } catch (error) {
       console.log("SENDOTP API ERROR............", error)
-      toast.error("Could Not Send OTP")
+      toast.error("Email already existed please login")
     }
     dispatch(setLoading(false))
     toast.dismiss(toastId)
